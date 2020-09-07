@@ -1,0 +1,95 @@
+@import '../../styles/variables.scss';
+
+.card {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+.name {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--color-text-primary);
+}
+
+.role {
+  margin-top: 0;
+  font-weight: 200;
+}
+.front {
+  transition: all 0.25s;
+}
+
+.img {
+  background-color: var(--color-card);
+  padding: 20px;
+  padding-bottom: 0;
+  border-radius: 10px;
+}
+
+.back {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.background {
+  background: var(--color-card-background);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0.2, 0.9);
+}
+
+.card:hover .background {
+  transition: transform 0.2s cubic-bezier(0.21, 1, 0.81, 1), opacity 0.1s;
+
+  transform: scale(1.4, 1.2);
+  opacity: 1;
+}
+
+.card:hover .front {
+  transform: translateY(-30%) scale(0.8);
+  color: var(--color-background-secondary);
+}
+
+.card:hover .name {
+  animation: name 0.25s forwards;
+  color: var(--color-background-secondary);
+}
+
+.card:hover .role {
+  animation: name 0.25s forwards;
+}
+
+.card:hover .back {
+  color: var(--color-background-secondary);
+  opacity: 1;
+}
+@keyframes name {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+  50% {
+    text-align: center;
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    text-align: center;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

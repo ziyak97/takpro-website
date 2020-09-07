@@ -3,16 +3,12 @@ import Head from 'next/head'
 import Sidebar from '../components/sidebar/sidebar.component'
 import Navbar from '../components/navbar/navbar.component'
 import styles from '../styles/Home.module.css'
-import SupportCard from '../components/support-card/support-card.component'
-import MainSection from '../components/main-section/main-section.component'
-import Testimonial from '../components/testimonial/testimonial.component'
-import TeamCard from '../components/team-card/team-card.component'
 import Footer from '../components/footer/footer.component'
-import World from '../components/world/world.component'
-import Growth from '../components/growth/growth.component'
-import Cool from '../components/cool/cool.component'
+import AboutMain from '../components/about-main/about-main.component'
+import Team from '../components/team/team.component'
+import AboutValues from '../components/about-values/about-values.component'
 
-export default function Home() {
+export default function About() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleSidebar = () => {
@@ -40,11 +36,9 @@ export default function Home() {
       />
       <Navbar handleSidebar={() => handleSidebar()} />
       <main className={styles.main}>
-        <MainSection />
-        <SupportCard />
-        <Testimonial />
-        <World />
-        <Growth />
+        <AboutMain />
+        <Team />
+        <AboutValues />
       </main>
       <Footer />
     </div>

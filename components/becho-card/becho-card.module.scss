@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.container {
+  text-align: center;
+  background-color: var(--color-background-secondary);
+  padding: 20px;
+  box-shadow: 0 42px 64px 0 #e7e7ec;
+  transition: all 0.4s;
+}
+
+.container:hover {
+  transform: translateY(-0.5rem);
+  -webkit-box-shadow: 0 0.2rem 0.8rem rgba(36, 36, 36, 0.15);
+  box-shadow: 0 0.2rem 0.8rem rgba(36, 36, 36, 0.15);
+}
+
+.img {
+  width: 30%;
+}

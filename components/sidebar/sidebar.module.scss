@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.mobile_menu {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(16px);
+  background-color: var(--color-navbar);
+  z-index: 200;
+  overflow: auto;
+  backface-visibility: hidden;
+  padding: 20px;
+  color: var(--color-text-primary);
+}
+
+.links_container > div {
+  margin: 25px 0;
+  font-size: 1.6rem;
+}
+
+.close {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  margin-top: auto;
+  position: absolute;
+  bottom: 30px;
+  left: 35px;
+}
+
+.bar1 {
+  height: 55px;
+  width: 2px;
+  margin-left: 12px;
+  background-color: var(--color-text-primary);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.bar2 {
+  height: 55px;
+  width: 2px;
+  background-color: var(--color-text-primary);
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+.active {
+  color: $color-red-primary;
+}
+
+.mobile_logo {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  font-size: 1.3rem;
+}

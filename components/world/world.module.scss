@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+
+.container {
+  padding: 4.65rem 4vw;
+  background-color: var(--color-background-secondary);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.h2 {
+  color: var(--color-text-primary);
+}
+
+.image_container {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+}
