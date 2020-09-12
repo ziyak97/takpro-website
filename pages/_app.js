@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar/sidebar.component'
 import Navbar from '../components/navbar/navbar.component'
 import Footer from '../components/footer/footer.component'
 
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import '../styles/variables.scss'
 import '../components/cool/cool.scss'
 
