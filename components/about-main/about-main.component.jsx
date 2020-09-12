@@ -16,7 +16,7 @@ const AboutMain = () => {
             Not your everyday solutions team but a partner that will help your
             business grow with modern tools more than you thought it's possible.
           </p>
-          <Link href='/contact'>
+          <Link href='#team'>
             <a className={styles.button}>Meet the team</a>
           </Link>
         </div>

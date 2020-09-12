@@ -11,7 +11,7 @@ import styles from './team.module.scss'
 
 const Team = () => {
   return (
-    <section className={styles.container}>
+    <section id='team' className={styles.container}>
       <div>
         <div>
           <h3 className={styles.h3}>WE ARE</h3>
