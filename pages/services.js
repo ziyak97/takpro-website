@@ -14,7 +14,7 @@ export default function About(props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { API_URL } = process.env
 
   const res = await fetch(`${API_URL}/services-cards?_embed`)
@@ -24,5 +24,6 @@ export async function getServerSideProps() {
     props: {
       cards,
     },
+    revalidate: 1,
   }
 }
