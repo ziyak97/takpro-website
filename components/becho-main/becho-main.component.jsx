@@ -5,7 +5,8 @@ import BechoCardContainer from '../becho-card-container/becho-card-container.com
 
 import styles from './becho-main.module.scss'
 
-const BechoMain = () => {
+const BechoMain = (props) => {
+  const { cards } = props
   return (
     <section className={styles.container}>
       <div className={styles.container_top}>
@@ -18,7 +19,7 @@ const BechoMain = () => {
           single roof!
         </p>
       </div>
-      <BechoCardContainer />
+      <BechoCardContainer cards={cards} />
       <div className={styles.container_bottom}>
         <h2>So are you ready to go online?</h2>
         <Link href='/contact'>

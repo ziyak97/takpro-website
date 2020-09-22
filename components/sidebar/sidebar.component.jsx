@@ -20,21 +20,16 @@ const Sidebar = (props) => {
           </Link>
         </div>
         <div className={`${router.pathname === '/about' && styles.active}`}>
-          {' '}
           <Link href='/about' className={styles.links}>
             About
           </Link>
         </div>
-        <div
-          className={`${router.pathname === '/becho-direct' && styles.active}`}
-        >
-          {' '}
-          <Link href='/becho-direct' className={styles.links}>
-            Becho Direct
+        <div className={`${router.pathname === '/services' && styles.active}`}>
+          <Link href='/services' className={styles.links}>
+            Services
           </Link>
         </div>
         <div className={`${router.pathname === '/contact' && styles.active}`}>
-          {' '}
           <Link href='/contact' className={styles.links}>
             Contact
           </Link>

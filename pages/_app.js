@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react'
+import fetch from 'isomorphic-unfetch'
+import getConfig from 'next/config'
+import { DefaultSeo } from 'next-seo'
+import SEO from '../next-seo.config'
 
 import Sidebar from '../components/sidebar/sidebar.component'
 import Navbar from '../components/navbar/navbar.component'
@@ -8,11 +12,16 @@ import '../styles/globals.scss'
 import '../styles/variables.scss'
 import '../components/cool/cool.scss'
 
-function MyApp({ Component, pageProps }) {
+function MyApp(props) {
+  const { Component, pageProps, navigation, footer } = props
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleSidebar = () => {
     setSidebarOpen((prevState) => !prevState)
+  }
+
+  const closeSidebar = () => {
+    setSidebarOpen(false)
   }
 
   useEffect(() => {
@@ -26,16 +35,35 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <DefaultSeo {...SEO} />
       <Sidebar
+        navigation={navigation}
         sidebarOpen={sidebarOpen}
         handleSidebar={() => handleSidebar()}
+        closeSidebar={closeSidebar}
       />
-      <Navbar handleSidebar={() => handleSidebar()} />
+      <Navbar navigation={navigation} handleSidebar={() => handleSidebar()} />
 
       <Component {...pageProps} />
-      <Footer />
+      <Footer footer={footer} />
     </>
   )
+}
+
+const { publicRuntimeConfig } = getConfig()
+
+MyApp.getInitialProps = async () => {
+  const resNav = await fetch(`${publicRuntimeConfig.API_URL}/navigation`)
+  let navigation = await resNav.json()
+  navigation = navigation.sort((a, b) => a.Position - b.Position)
+  const resFooter = await fetch(`${publicRuntimeConfig.API_URL}/footer`)
+  let footer = await resFooter.json()
+  footer = footer[0]
+
+  return {
+    navigation,
+    footer,
+  }
 }
 
 export default MyApp

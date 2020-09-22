@@ -45,23 +45,16 @@ const Navbar = (props) => {
             </Link>
           </li>
           <li className={`${router.pathname === '/about' && styles.active}`}>
-            {' '}
             <Link href='/about' className={styles.links}>
               About
             </Link>
           </li>
-          <li
-            className={`${
-              router.pathname === '/becho-direct' && styles.active
-            }`}
-          >
-            {' '}
-            <Link href='/becho-direct' className={styles.links}>
-              Becho Direct
+          <li className={`${router.pathname === '/services' && styles.active}`}>
+            <Link href='/services' className={styles.links}>
+              Services
             </Link>
           </li>
           <li className={`${router.pathname === '/contact' && styles.active}`}>
-            {' '}
             <Link href='/contact' className={styles.links}>
               Contact
             </Link>
