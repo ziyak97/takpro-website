@@ -13,7 +13,7 @@ import '../styles/variables.scss'
 import '../components/cool/cool.scss'
 
 function MyApp(props) {
-  const { Component, pageProps, navigation, footer } = props
+  const { Component, pageProps, footer } = props
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleSidebar = () => {
@@ -37,12 +37,11 @@ function MyApp(props) {
     <>
       <DefaultSeo {...SEO} />
       <Sidebar
-        navigation={navigation}
         sidebarOpen={sidebarOpen}
         handleSidebar={() => handleSidebar()}
         closeSidebar={closeSidebar}
       />
-      <Navbar navigation={navigation} handleSidebar={() => handleSidebar()} />
+      <Navbar handleSidebar={() => handleSidebar()} />
 
       <Component {...pageProps} />
       <Footer footer={footer} />
@@ -53,15 +52,11 @@ function MyApp(props) {
 const { publicRuntimeConfig } = getConfig()
 
 MyApp.getInitialProps = async () => {
-  const resNav = await fetch(`${publicRuntimeConfig.API_URL}/navigation`)
-  let navigation = await resNav.json()
-  navigation = navigation.sort((a, b) => a.Position - b.Position)
-  const resFooter = await fetch(`${publicRuntimeConfig.API_URL}/footer`)
-  let footer = await resFooter.json()
+  const res = await fetch(`${publicRuntimeConfig.API_URL}/footer`)
+  let footer = await res.json()
   footer = footer[0]
 
   return {
-    navigation,
     footer,
   }
 }
