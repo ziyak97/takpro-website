@@ -4,11 +4,11 @@ import styles from '../styles/Home.module.css'
 import BechoMain from '../components/becho-main/becho-main.component'
 
 export default function About(props) {
-  const { cards } = props
+  const { cards, services } = props
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <BechoMain cards={cards} />
+        <BechoMain services={services} cards={cards} />
       </main>
     </div>
   )
@@ -17,12 +17,16 @@ export default function About(props) {
 export async function getStaticProps() {
   const { API_URL } = process.env
 
-  const res = await fetch(`${API_URL}/services-cards?_embed`)
-  let cards = await res.json()
+  const resServices = await fetch(`${API_URL}/services`)
+  const [services] = await resServices.json()
+
+  const resCards = await fetch(`${API_URL}/services-cards`)
+  let cards = await resCards.json()
   cards = cards.sort((a, b) => a.Position - b.Position)
   return {
     props: {
       cards,
+      services,
     },
     revalidate: 1,
   }

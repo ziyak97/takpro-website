@@ -6,24 +6,18 @@ import BechoCardContainer from '../becho-card-container/becho-card-container.com
 import styles from './becho-main.module.scss'
 
 const BechoMain = (props) => {
-  const { cards } = props
+  const { cards, services } = props
   return (
     <section className={styles.container}>
       <div className={styles.container_top}>
-        <h1 className={styles.h1}>Meet Becho Direct</h1>
-        <p>
-          Becho Direct (a TaskPro Services company) offers professional
-          eCommerce services to manufacturers and startups from the Fashion and
-          Textile industry helping them to achieve higher profits with minimum
-          overheads. From Onboarding to Sales - we have all on offer under a
-          single roof!
-        </p>
+        <h1 className={styles.h1}>{services.Title}</h1>
+        <p>{services.Description}</p>
       </div>
       <BechoCardContainer cards={cards} />
       <div className={styles.container_bottom}>
-        <h2>So are you ready to go online?</h2>
+        <h2>{services.Sub_Heading}</h2>
         <Link href='/contact'>
-          <a className={styles.button}>Get in touch!</a>
+          <a className={styles.button}>{services.Button_Text}</a>
         </Link>
       </div>
     </section>

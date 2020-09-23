@@ -53,8 +53,7 @@ const { publicRuntimeConfig } = getConfig()
 
 MyApp.getInitialProps = async () => {
   const res = await fetch(`${publicRuntimeConfig.API_URL}/footer`)
-  let footer = await res.json()
-  footer = footer[0]
+  const [footer] = await res.json()
 
   return {
     footer,
