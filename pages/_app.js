@@ -12,6 +12,9 @@ import '../styles/globals.scss'
 import '../styles/variables.scss'
 import '../components/cool/cool.scss'
 
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 function MyApp(props) {
   const { Component, pageProps, footer } = props
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -44,20 +47,20 @@ function MyApp(props) {
       <Navbar handleSidebar={() => handleSidebar()} />
 
       <Component {...pageProps} />
-      <Footer footer={footer} />
+      <Footer />
     </>
   )
 }
 
-const { publicRuntimeConfig } = getConfig()
+// const { publicRuntimeConfig } = getConfig()
 
-MyApp.getInitialProps = async () => {
-  const res = await fetch(`${publicRuntimeConfig.API_URL}/footer`)
-  const [footer] = await res.json()
+// MyApp.getInitialProps = async () => {
+//   const res = await fetch(`${publicRuntimeConfig.API_URL}/footer`)
+//   const [footer] = await res.json()
 
-  return {
-    footer,
-  }
-}
+//   return {
+//     footer,
+//   }
+// }
 
 export default MyApp

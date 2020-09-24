@@ -11,7 +11,7 @@ const AboutMain = () => {
       <div className={styles.container}>
         <div className={styles.div}>
           <h4 className={styles.h4}>ABOUT US</h4>
-          <h1 className={styles.h1}>We are TakPro Services</h1>
+          <h1 className={styles.h1}>We are TaskPro Services</h1>
           <p className={styles.p}>
             Not your everyday solutions team but a partner that will help your
             business grow with modern tools more than you thought it's possible.

@@ -5,16 +5,43 @@ import Testimonial from '../components/testimonial/testimonial.component'
 import World from '../components/world/world.component'
 import Growth from '../components/growth/growth.component'
 
-export default function Home() {
+export default function Home(props) {
+  const { testimonials } = props
   return (
     <div className={styles.container}>
+      {!testimonials ? (
+        <div>Loading</div>
+      ) : (
+        <main className={styles.main}>
+          <MainSection />
+          <SupportCard />
+          <Testimonial testimonials={testimonials} />
+          <World />
+          <Growth />
+        </main>
+      )}
       <main className={styles.main}>
         <MainSection />
         <SupportCard />
-        <Testimonial />
+        <Testimonial testimonials={testimonials} />
         <World />
         <Growth />
       </main>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const { API_URL } = process.env
+
+  const resTestimonials = await fetch(`${API_URL}/testimonials`)
+  let testimonials = await resTestimonials.json()
+  testimonials = testimonials.sort((a, b) => a.Position - b.Position)
+
+  return {
+    props: {
+      testimonials,
+    },
+    revalidate: 1,
+  }
 }

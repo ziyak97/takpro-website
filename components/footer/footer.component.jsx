@@ -8,8 +8,7 @@ import ToggleMode from '../toggle-mode/toggle-mode.component'
 
 import styles from './footer.module.scss'
 
-const Footer = (props) => {
-  const { footer } = props
+const Footer = () => {
   const router = useRouter()
 
   const handleClick = () => {
@@ -36,11 +35,14 @@ const Footer = (props) => {
         </a>
         <div className={styles.video_container}>
           <div className={styles.video_text}>
-            <h2>{footer.Title}</h2>
-            <p>{footer.Description}</p>
+            <h2>HOW CAN WE HELP YOUR BUSINESS?</h2>
+            <p>
+              Check out how we can help your business and if you have any
+              queries feel free to get in touch
+            </p>
             {router.pathname !== '/contact' ? (
               <Link href='/contact'>
-                <a className={styles.button}>{footer.Button_Text}</a>
+                <a className={styles.button}>Contact us</a>
               </Link>
             ) : (
               <a onClick={handleClick} className={styles.button}>
@@ -53,7 +55,7 @@ const Footer = (props) => {
               className={styles.player}
               width='100%'
               height='100%'
-              url={footer.Video_Url}
+              url='https://www.youtube.com/watch?v=XfpYXQd8rgQ&ab_channel=TaskProServices'
             />
           </div>
         </div>
@@ -64,32 +66,31 @@ const Footer = (props) => {
           </div>
           <div className={styles.bottom_clients}>
             <h3>Serving Clients in</h3>
-            <p>{footer.Service_1}</p>
-            <p>{footer.Service_2}</p>
-            <p>{footer.Service_3}</p>
-            <p>{footer.Service_4}</p>
-            <p>{footer.Service_5}</p>
-            <p>{footer.Service_6}</p>
+            <p>E-commerce</p>
+            <p>Online Entertainment</p>
+            <p>Digital Media</p>
+            <p>Travel Industry</p>
+            <p>Multinational Retail</p>
+            <p>Tech Support</p>
           </div>
           <div className={styles.bottom_expertise}>
-            <h3>Expertise In</h3>
-            <p>{footer.Expertise_1}</p>
-            <p>{footer.Expertise_2}</p>
-            <p>{footer.Expertise_3}</p>
-            <p>{footer.Expertise_4}</p>
-            <p>{footer.Expertise_5}</p>
+            <h3>Expertise in</h3>
+            <p>E-mail Support</p>
+            <p>Chat Support</p>
+            <p>Content Mgmt</p>
+            <p>Social Media Mgmt</p>
+            <p>Data Entry</p>
           </div>
           <div className={styles.bottom_office}>
             <h3>Head Office</h3>
-            <p>{footer.Office_1}</p>
-            <p>{footer.Office_2}</p>
-            <p>{footer.Office_3}</p>
-            <p>{footer.Office_4}</p>
-            <p>{footer.Office_5}</p>
-            <p>{footer.Office_6}</p>
+            <p>214, Shah Heritage,</p>
+            <p>Seawoods, Nerul (W),</p>
+            <p>Navi Mumbai, 400706, Maharashtra,</p>
+            <p>India.</p>
+            <p>Tel: +91 022-49704886</p>
           </div>
         </div>
-        <div className={styles.copyright}>{footer.Copyright}</div>
+        <div className={styles.copyright}>Copyright © TaskPro Services</div>
       </div>
     </footer>
   )

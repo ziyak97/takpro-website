@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel='icon' href='/favicon.ico' />
-        </Head>{' '}
+        </Head>
         <body>
           <Main />
           <NextScript />
