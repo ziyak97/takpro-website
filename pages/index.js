@@ -9,17 +9,6 @@ export default function Home(props) {
   const { testimonials } = props
   return (
     <div className={styles.container}>
-      {!testimonials ? (
-        <div>Loading</div>
-      ) : (
-        <main className={styles.main}>
-          <MainSection />
-          <SupportCard />
-          <Testimonial testimonials={testimonials} />
-          <World />
-          <Growth />
-        </main>
-      )}
       <main className={styles.main}>
         <MainSection />
         <SupportCard />
