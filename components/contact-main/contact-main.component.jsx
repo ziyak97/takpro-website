@@ -31,17 +31,6 @@ const ContactMain = () => {
               <p>+91 9082575545</p>
             </div>
           </div>
-          <div>
-            <h3>Becho Direct</h3>
-            <div className={styles.img_container}>
-              <img src={EmailLogo} alt='email' />
-              <p>9375976444 / 8160168637 / 9082575545</p>
-            </div>
-            <div className={styles.img_container}>
-              <img src={PhoneLogo} alt='phone' />
-              <p>bechodirect@gmail.com</p>
-            </div>
-          </div>
         </div>
         <div className={styles.office_container}>
           <h3>Head Office</h3>
