@@ -14,22 +14,34 @@ const Sidebar = (props) => {
       className={styles.mobile_menu}
     >
       <div className={styles.links_container}>
-        <div className={`${router.pathname === '/' && styles.active}`}>
+        <div
+          className={`${router.pathname === '/' && styles.active}`}
+          onClick={handleSidebar}
+        >
           <Link href='/' className={styles.links}>
             Home
           </Link>
         </div>
-        <div className={`${router.pathname === '/about' && styles.active}`}>
+        <div
+          className={`${router.pathname === '/about' && styles.active}`}
+          onClick={handleSidebar}
+        >
           <Link href='/about' className={styles.links}>
             About
           </Link>
         </div>
-        <div className={`${router.pathname === '/services' && styles.active}`}>
+        <div
+          className={`${router.pathname === '/services' && styles.active}`}
+          onClick={handleSidebar}
+        >
           <Link href='/services' className={styles.links}>
             Services
           </Link>
         </div>
-        <div className={`${router.pathname === '/contact' && styles.active}`}>
+        <div
+          className={`${router.pathname === '/contact' && styles.active}`}
+          onClick={handleSidebar}
+        >
           <Link href='/contact' className={styles.links}>
             Contact
           </Link>
