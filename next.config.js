@@ -10,9 +10,11 @@ module.exports = withPlugins([
   {
     env: {
       API_URL: process.env.API_URL,
+      TAWK_KEY: process.env.TAWK_KEY,
     },
     publicRuntimeConfig: {
       API_URL: process.env.API_URL,
+      TAWK_KEY: process.env.TAWK_KEY,
     },
   },
   // [withPWA, { dest: 'public' }],

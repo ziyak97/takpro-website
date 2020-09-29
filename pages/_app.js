@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import fetch from 'isomorphic-unfetch'
-import getConfig from 'next/config'
 import { DefaultSeo } from 'next-seo'
+const tawkTo = require('tawkto-react')
+import getConfig from 'next/config'
+
 import SEO from '../next-seo.config'
 
 import Sidebar from '../components/sidebar/sidebar.component'
@@ -16,7 +17,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function MyApp(props) {
-  const { Component, pageProps, footer } = props
+  const { publicRuntimeConfig } = getConfig()
+
+  const { Component, pageProps } = props
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleSidebar = () => {
@@ -28,7 +31,11 @@ function MyApp(props) {
   }
 
   useEffect(() => {
+    const tawkToPropertyId = publicRuntimeConfig.TAWK_KEY
     const theme = window.localStorage.getItem('theme')
+
+    tawkTo(tawkToPropertyId)
+
     if (!theme) {
       window.document.querySelector('body').classList.add('light')
     } else {

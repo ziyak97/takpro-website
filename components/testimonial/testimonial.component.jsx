@@ -21,7 +21,7 @@ const Testimonial = (props) => {
     <div className={styles.container}>
       <Slider className={styles.testimonial} {...settings}>
         {testimonials.map((testimonial) => (
-          <div>
+          <div key={testimonial.Testimonial}>
             <h3 className={styles.h3}>{testimonial.Testimonial}</h3>
             <div className={styles.container_small}>
               <img
