@@ -71,14 +71,14 @@ const Footer = () => {
             <p>Digital Media</p>
             <p>Travel Industry</p>
             <p>Multinational Retail</p>
-            <p>Tech Support</p>
+            <p>SaaS</p>
           </div>
           <div className={styles.bottom_expertise}>
             <h3>Expertise in</h3>
             <p>E-mail Support</p>
             <p>Chat Support</p>
-            <p>Content Mgmt</p>
-            <p>Social Media Mgmt</p>
+            <p>Content Management</p>
+            <p>Social Media Management</p>
             <p>Data Entry</p>
           </div>
           <div className={styles.bottom_office}>
@@ -87,7 +87,7 @@ const Footer = () => {
             <p>Seawoods, Nerul (W),</p>
             <p>Navi Mumbai, 400706, Maharashtra,</p>
             <p>India.</p>
-            <p>Tel: +91 022-49704886</p>
+            <p>Tel: +91 9082575545</p>
           </div>
         </div>
         <div className={styles.copyright}>Copyright © TaskPro Services</div>
