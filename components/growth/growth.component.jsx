@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Lightbulb from '../../public/lighbulb.gif'
+
 import styles from './growth.module.scss'
 
 const Growth = () => {
@@ -14,9 +16,7 @@ const Growth = () => {
         </p>
       </div>
       <div className={styles.video_container}>
-        <video className={styles.video} autoPlay loop muted>
-          <source src='/lightbulb.mp4' type='video/mp4' />
-        </video>
+        <img src={Lightbulb} className={styles.video} />
       </div>
     </section>
   )
