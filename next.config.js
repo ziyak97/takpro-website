@@ -5,17 +5,25 @@ const withPWA = require('next-pwa')
 require('dotenv').config()
 
 module.exports = withPlugins([
-  [withImages],
-  [withVideos],
-  {
-    env: {
-      API_URL: process.env.API_URL,
-      TAWK_KEY: process.env.TAWK_KEY,
-    },
-    publicRuntimeConfig: {
-      API_URL: process.env.API_URL,
-      TAWK_KEY: process.env.TAWK_KEY,
-    },
-  },
-  // [withPWA, { dest: 'public' }],
+	[withImages],
+	[withVideos],
+	[
+		withPWA,
+		{
+			pwa: {
+				dest: 'public',
+			},
+		},
+	],
+	{
+		env: {
+			API_URL: process.env.API_URL,
+			TAWK_KEY: process.env.TAWK_KEY,
+		},
+		publicRuntimeConfig: {
+			API_URL: process.env.API_URL,
+			TAWK_KEY: process.env.TAWK_KEY,
+		},
+	},
+	// [withPWA, { dest: 'public' }],
 ])

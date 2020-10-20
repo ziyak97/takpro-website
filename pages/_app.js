@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/Head'
 import { DefaultSeo } from 'next-seo'
 const tawkTo = require('tawkto-react')
 import getConfig from 'next/config'
@@ -17,46 +18,52 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function MyApp(props) {
-  const { publicRuntimeConfig } = getConfig()
+	const { publicRuntimeConfig } = getConfig()
 
-  const { Component, pageProps } = props
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+	const { Component, pageProps } = props
+	const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  const handleSidebar = () => {
-    setSidebarOpen((prevState) => !prevState)
-  }
+	const handleSidebar = () => {
+		setSidebarOpen((prevState) => !prevState)
+	}
 
-  const closeSidebar = () => {
-    setSidebarOpen(false)
-  }
+	const closeSidebar = () => {
+		setSidebarOpen(false)
+	}
 
-  useEffect(() => {
-    const tawkToPropertyId = publicRuntimeConfig.TAWK_KEY
-    const theme = window.localStorage.getItem('theme')
+	useEffect(() => {
+		const tawkToPropertyId = publicRuntimeConfig.TAWK_KEY
+		const theme = window.localStorage.getItem('theme')
 
-    tawkTo(tawkToPropertyId)
+		tawkTo(tawkToPropertyId)
 
-    if (!theme) {
-      window.document.querySelector('body').classList.add('light')
-    } else {
-      window.document.querySelector('body').classList.add(theme)
-    }
-  }, [])
+		if (!theme) {
+			window.document.querySelector('body').classList.add('light')
+		} else {
+			window.document.querySelector('body').classList.add(theme)
+		}
+	}, [])
 
-  return (
-    <>
-      <DefaultSeo {...SEO} />
-      <Sidebar
-        sidebarOpen={sidebarOpen}
-        handleSidebar={() => handleSidebar()}
-        closeSidebar={closeSidebar}
-      />
-      <Navbar handleSidebar={() => handleSidebar()} />
+	return (
+		<>
+			<Head>
+				<meta
+					name='viewport'
+					content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+				/>
+			</Head>
+			<DefaultSeo {...SEO} />
+			<Sidebar
+				sidebarOpen={sidebarOpen}
+				handleSidebar={() => handleSidebar()}
+				closeSidebar={closeSidebar}
+			/>
+			<Navbar handleSidebar={() => handleSidebar()} />
 
-      <Component {...pageProps} />
-      <Footer />
-    </>
-  )
+			<Component {...pageProps} />
+			<Footer />
+		</>
+	)
 }
 
 // const { publicRuntimeConfig } = getConfig()
