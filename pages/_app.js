@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Head from 'next/Head'
 import { DefaultSeo } from 'next-seo'
 const tawkTo = require('tawkto-react')
 import getConfig from 'next/config'
@@ -46,12 +45,6 @@ function MyApp(props) {
 
 	return (
 		<>
-			<Head>
-				<meta
-					name='viewport'
-					content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
-				/>
-			</Head>
 			<DefaultSeo {...SEO} />
 			<Sidebar
 				sidebarOpen={sidebarOpen}
