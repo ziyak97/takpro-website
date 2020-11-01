@@ -6,6 +6,7 @@
   padding: 20px;
   box-shadow: 0 42px 64px 0 var(--color-card-shadow);
   transition: all 0.4s;
+  text-align: -webkit-center;
 }
 
 .container:hover {
@@ -16,4 +17,5 @@
 
 .img {
   width: 30%;
+  
 }

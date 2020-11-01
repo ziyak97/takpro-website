@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 import TeamLogo from '../../public/team.svg'
@@ -24,7 +23,6 @@ const AboutMain = () => {
 				<div className={styles.img}>
 					<SpaceImage />
 				</div>
-				{/* <img className={styles.img} src={TeamLogo} alt='team' /> */}
 			</div>
 			<div className={styles.bottom_container}>
 				<h3 className={styles.h3}>Client-focused, forward-thinking people</h3>

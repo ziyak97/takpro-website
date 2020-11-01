@@ -1,4 +1,3 @@
-import React from 'react'
 import TeamCard from '../team-card/team-card.component'
 import ZiyakLogo from '../../public/ziyak.png'
 import ThomasLogo from '../../public/thomas.svg'

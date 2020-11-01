@@ -24,6 +24,8 @@ module.exports = withPlugins([
 			API_URL: process.env.API_URL,
 			TAWK_KEY: process.env.TAWK_KEY,
 		},
+		images: {
+			domains: ['backend.taskproservices.com'],
+		},
 	},
-	// [withPWA, { dest: 'public' }],
 ])

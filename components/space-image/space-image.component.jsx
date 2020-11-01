@@ -1,5 +1,3 @@
-import React from 'react'
-
 import styles from './space-image.module.scss'
 
 const SpaceImage = () => {

@@ -1,8 +1,4 @@
-import React from 'react'
-import DataManagementLogo from '../../public/data-management.svg'
-import EcommerceLogo from '../../public/ecommerce.svg'
-import TechnicalSupportLogo from '../../public/technical-support.svg'
-import SocialMediaLogo from '../../public/social-media.svg'
+import Image from 'next/image'
 
 import styles from './support-card.module.scss'
 
@@ -23,7 +19,9 @@ const SupportCard = (props) => {
 				{cards.map((card) => (
 					<div key={card.id} className={styles.svg_container}>
 						<div className={styles.svg_container_number}>
-							<img
+							<Image
+								width={152}
+								height={160}
 								className={styles.svg}
 								src={card.Image_Url}
 								alt='Service Logo'

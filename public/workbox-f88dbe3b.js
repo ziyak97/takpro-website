@@ -1,7 +1,7 @@
-define("./workbox-8c6a447f.js",['exports'], function (exports) { 'use strict';
+define("./workbox-f88dbe3b.js",['exports'], function (exports) { 'use strict';
 
     try {
-      self['workbox:core:5.1.3'] && _();
+      self['workbox:core:5.1.4'] && _();
     } catch (e) {}
 
     /*
@@ -471,7 +471,7 @@ define("./workbox-8c6a447f.js",['exports'], function (exports) { 'use strict';
     };
 
     try {
-      self['workbox:routing:5.1.3'] && _();
+      self['workbox:routing:5.1.4'] && _();
     } catch (e) {}
 
     /*
@@ -1412,7 +1412,7 @@ define("./workbox-8c6a447f.js",['exports'], function (exports) { 'use strict';
     };
 
     try {
-      self['workbox:strategies:5.1.3'] && _();
+      self['workbox:strategies:5.1.4'] && _();
     } catch (e) {}
 
     /*
@@ -1582,4 +1582,4 @@ define("./workbox-8c6a447f.js",['exports'], function (exports) { 'use strict';
     exports.skipWaiting = skipWaiting;
 
 });
-//# sourceMappingURL=workbox-8c6a447f.js.map
+//# sourceMappingURL=workbox-f88dbe3b.js.map
