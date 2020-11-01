@@ -32,6 +32,8 @@
   width: 510px;
   margin-left: auto;
   align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
@@ -93,7 +95,6 @@
 
   .img {
     width: 300px;
-    display: inline-block;
     margin: auto;
   }
 
@@ -121,7 +122,6 @@
 
   .img {
     width: 300px;
-    display: inline-block;
     margin: auto;
   }
 
@@ -148,7 +148,6 @@
 
   .img {
     width: 300px;
-    display: inline-block;
   }
 
   .h2 {
@@ -175,7 +174,6 @@
 
   .img {
     width: 350px;
-    display: inline-block;
   }
 
   .h2 {
@@ -202,7 +200,6 @@
 
   .img {
     width: 510px;
-    display: inline-block;
   }
 
   .h2 {
