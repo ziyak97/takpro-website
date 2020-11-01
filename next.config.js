@@ -27,5 +27,6 @@ module.exports = withPlugins([
 		images: {
 			domains: ['backend.taskproservices.com'],
 		},
+		target: 'serverless',
 	},
 ])
