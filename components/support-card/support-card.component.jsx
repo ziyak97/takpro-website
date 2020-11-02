@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import styles from './support-card.module.scss'
 
 const SupportCard = (props) => {
@@ -19,9 +17,7 @@ const SupportCard = (props) => {
 				{cards.map((card) => (
 					<div key={card.id} className={styles.svg_container}>
 						<div className={styles.svg_container_number}>
-							<Image
-								width={152}
-								height={160}
+							<img
 								className={styles.svg}
 								src={card.Image_Url}
 								alt='Service Logo'

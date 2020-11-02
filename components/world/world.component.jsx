@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import WorldLogo from '../../public/world.webp'
 
 import styles from './world.module.scss'
@@ -16,13 +14,7 @@ const World = () => {
 				</p>
 			</div>
 			<div className={styles.image_container}>
-				<Image
-					width={1200}
-					height={700}
-					className={styles.image}
-					src={WorldLogo}
-					alt='World'
-				/>
+				<img className={styles.image} src={WorldLogo} alt='World' />
 			</div>
 		</section>
 	)

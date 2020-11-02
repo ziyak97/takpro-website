@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import Lightbulb from '../../public/lighbulb.gif'
 
 import styles from './growth.module.scss'
@@ -16,12 +14,7 @@ const Growth = () => {
 				</p>
 			</div>
 			<div className={styles.video_container}>
-				<Image
-					width={500}
-					height={600}
-					src={Lightbulb}
-					className={styles.video}
-				/>
+				<img src={Lightbulb} className={styles.video} />
 			</div>
 		</section>
 	)

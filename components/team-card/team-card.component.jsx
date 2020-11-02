@@ -1,12 +1,10 @@
-import Image from 'next/image'
-
 import styles from './team-card.module.scss'
 
 const TeamCard = ({ src, name, role, hobbies }) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.front}>
-				<Image
+				<img
 					width='160'
 					height='188'
 					className={styles.img}
