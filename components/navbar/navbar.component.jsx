@@ -39,26 +39,26 @@ const Navbar = (props) => {
 
       {!isMobile && (
         <ul className={styles.ul}>
-          <li className={`${router.pathname === '/' && styles.active}`}>
-            <Link href='/' className={styles.links}>
-              Home
-            </Link>
-          </li>
-          <li className={`${router.pathname === '/about' && styles.active}`}>
-            <Link href='/about' className={styles.links}>
-              About
-            </Link>
-          </li>
-          <li className={`${router.pathname === '/services' && styles.active}`}>
-            <Link href='/services' className={styles.links}>
-              Services
-            </Link>
-          </li>
-          <li className={`${router.pathname === '/contact' && styles.active}`}>
-            <Link href='/contact' className={styles.links}>
-              Contact
-            </Link>
-          </li>
+          <Link href='/' className={styles.links}>
+            <li className={`${router.pathname === '/' && styles.active}`}>
+                Home
+            </li>
+          </Link>
+          <Link href='/about' className={styles.links}>
+            <li className={`${router.pathname === '/about' && styles.active}`}>
+                About
+            </li>
+          </Link>
+          <Link href='/services' className={styles.links}>
+            <li className={`${router.pathname === '/services' && styles.active}`}>
+                Services
+            </li>
+          </Link>
+          <Link href='/contact' className={styles.links}>
+            <li className={`${router.pathname === '/contact' && styles.active}`}>
+                Contact
+            </li>
+          </Link>
         </ul>
       )}
       {isMobile && (
